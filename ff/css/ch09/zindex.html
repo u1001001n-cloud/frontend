@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>zindex.html</title>
+  <style>
+    div { width: 100px; height: 100px; position: absolute; }
+    .cls-a { z-index: 0; background-color: red; }
+    .cls-b { z-index: 1; background-color: blue; left: 50px; top: 50px; }
+    .cls-c { z-index: 0; background-color: chartreuse; left: 100px; top: 100px; }
+  </style>
+  <!-- 
+  z-index가 먹히려면 포지션이 스태틱이 아니어야 한다.
+  0이 z-index의 기본 속성값(오토=0)이다.
+  따라서 상대적으로 더 높은 수치를 입력할수록 한 층씩 더 올라오는 순서가 바뀐다.
+  -->
+</head>
+<body>
+  <div class="cls-a">A</div>
+  <div class="cls-b">B</div>
+  <div class="cls-c">C</div>
+</body>
+</html>

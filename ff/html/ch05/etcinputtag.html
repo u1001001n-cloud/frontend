@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>기타 인풋 타입</h1>
+  <form action="#">
+    <label for="fileIp">file</label> <br>
+    <input
+    id="fileIp"
+    type="file"
+    accept="image/png, image/jpg, image/jpeg, image/*"
+    multiple
+    > <!--이미지 슬래시 옆에 별_애스터리스크(아스트릭)를 넣으면 모든all 이미지 확장자를 다 포함한다.-->
+    <br><br>
+    <label for="hdnIp">hidden</label> <br>
+    <input
+    id="hdnIp"
+    type="hidden"
+    name="hidden"
+    value="홍길동"
+    >
+  </form><!--조금만 다르게 적으면 히든값이 보여지게 된다.-->
+  <br><hr><br>
+  <form action="#">
+    <label for="emlIp">email</label> <br>
+    <input
+    id="emlIp"
+    type="email"
+    ><!--이메일 정규식 검색하면 유효성 검사 관련 자료가 더 나온다.-->
+    <br><br>
+    <button type="submit">제출</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fontsize2.html</title>
+  <style>
+    /* rem 상대값이긴 하나 html에 적용되어 있는 폰트 사이즈 기준으로 비례 계산(중첩 안됨) */
+    html { font-size: 10px; }
+    div { font-size: 2rem; }
+  </style>
+</head>
+<body>
+  바깥 16px
+  <div>
+    중간 32px
+    <div>
+      안쪽 32px
+      <div>
+        구석 32px
+      </div>
+    </div>
+  </div>
+</body>
+<!-- 위에서 아래로 갈수록 자손(맨 위가 부모) -->
+</html>

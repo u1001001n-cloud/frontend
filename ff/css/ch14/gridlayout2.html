@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gridlayout2.html</title>
+  <style>
+    body { margin: 0; }
+    main { width: 100vw; display: grid;
+    
+    grid-template-columns: 200px 1fr 300px;
+    grid-template-rows: 80px 200px auto 200px;
+    gap: 12px; }
+
+    main > * { 
+  padding: 0.8em;
+  color: slateblue;
+  background-color: lavender;
+}
+
+nav { grid-column: 1 / -1; }
+footer { grid-column: 1 / -1; }
+aside { grid-row: 2 / 4; }
+.sec-1 { grid-column: 2 / -1 ; }
+
+.sec-2 div {
+  margin: 1em;
+  padding: 1.6em;
+  line-height: 2.4em;
+  font-family: serif;
+  color: #555;
+  background-color: white;
+}
+
+main {
+	grid-template-areas:
+		"header header header"
+		"   aside    a    a   "
+		"   aside     main      b   "
+    "   aside     main      b   "
+		"footer footer footer";
+}
+nav { grid-area: header; }
+aside { grid-area: aside; }
+.sec-1 { grid-area: a; }
+.sec-2 { grid-area: main; }
+.sec-3 { grid-area: b; }
+footer { grid-area: footer; }
+
+</style>
+
+</head>
+<body>
+  <!-- p.438 -->
+  <main>
+    <nav>nav</nav>
+    <aside>aside</aside>
+    <section class="sec-1">.sec-1</section>
+        <section class="sec-2">
+            .sec-2
+            <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.br <br>
+                Quasi officia mollitia quidem rerum fugiat! Ducimus explicabo<br>
+                illo labore iste natus.<br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.br <br>
+                Quasi officia mollitia quidem rerum fugiat! Ducimus explicabo<br>
+                illo labore iste natus.<br>
+
+            </div>
+        </section>
+        <section class="sec-3">.sec-3</section>
+        <footer>footer</footer>
+  </main>
+</body>
+</html>

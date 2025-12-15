@@ -1,0 +1,4 @@
+button { background-color: gray; }
+.primary { background-color: blue; color: white; }
+#submitBtn { background-color: green; }
+/* .primary, #submitBtn { color: white; } */

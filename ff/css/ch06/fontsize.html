@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fontsize.html</title>
+  <style>
+    /* em 상대값 부모가 적용되어 있는 폰트 사이즈에 비례 */
+    html { font-size: 10px; }
+    div { font-size: 2em; }
+    /* 보통 1.2em을 자주 씀. 2em은 너무 커져서 잘 안 씀 */
+  </style>
+</head>
+<body>
+  바깥 16px
+  <div>
+    중간 32px
+    <div>
+      안쪽 64px
+      <div>
+        구석 128px
+      </div>
+    </div>
+  </div>
+</body>
+<!-- 위에서 아래로 갈수록 자손(맨 위가 부모) -->
+</html>
