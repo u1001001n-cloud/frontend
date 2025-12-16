@@ -1,0 +1,44 @@
+body { margin: 0; }
+#wrapper { display: grid; gap: 12px; }
+#wrapper > * { 
+    background-color: lightblue;
+    padding: 1em;
+    font-size: 1.2em;
+    color: royalblue;
+    font-weight: bold;
+}
+header { position: relative; min-width: 80px; height: 24.5px; }
+nav ul { padding-left: 0.5em; }
+nav li { display: inline-block; margin-right: 0.5em; color: #333; }
+
+#menu { position: absolute; top: 0; right: 0; padding: 0; width: 20%;
+  height: 63px; line-height: 64px; color: #333; cursor: pointer; text-align: center;
+}
+
+main div { margin: 0.5em; padding: 0.5em; height: 67vh; 
+    color: #333; font-weight: normal; 
+    background-color: yellow;
+}
+footer { height: 200px; }
+
+@media (max-width: 768px) {
+    nav { display: none; }
+    #menu:hover + nav {
+        display: flex; justify-content: center;
+        text-align: center;
+        position: absolute; right: 0;
+        background-color: #fff;
+        width: 20%;
+    }
+    #menu:hover { background-color: #fff; }
+    #menu:hover + nav li { 
+        display: block;
+        padding: 0.6em;
+    }
+}
+
+@media (min-width: 769px) {
+    #menu { display: none; }
+    #wrapper { grid-template-columns: 200px 1fr; }
+    header, footer { grid-column: 1 / -1; }
+}
