@@ -9,7 +9,8 @@
   <script>
     let num = 14;
 
-    console.log(num, '은', num % 2 == 0 ? '짝수': '홀수')
+    console.log(num, '는(은) ' + (num % 2 == 0 ? '짝수': '홀수'))
+    console.log(`${num}는(은) ${(num % 2 == 0 ? '짝수': '홀수')}`); //더 깔끔하게 보는 심화버전
     // num % 2 == 0 는 식. 비교문 True, False. if(분기문)
   </script>
 </body>
