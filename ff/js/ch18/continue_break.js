@@ -24,3 +24,36 @@ for (let i = 1; i <= 10; i++) {
   console.log(i);
 }
 console.log("--끝--");
+
+for (let i = 0; i < 10; i++) {
+  for (let k = 0; k < 10; k++) {
+    if (k == 5) {
+      break;
+    }
+    console.log(`i:${i}, k:${k}`);
+  }
+}
+
+console.log("---------------------반복문에 레이블(label) 지정, 별명 지정");
+
+outer: for (let i = 0; i < 10; i++) {
+  for (let k = 0; k < 10; k++) {
+    if (k == 5) {
+      break outer;
+    }
+    console.log(`i:${i}, k:${k}`);
+  }
+}
+
+console.log("---------------continue");
+
+outer: for (let i = 0; i < 10; i++) {
+  for (let k = 0; k < 10; k++) {
+    if (k == 5) {
+      continue outer;
+      //break; 안쪽 for문 뒤에 내용이 없다면 같은데 내용이 있다면 다를 수 있다.
+    }
+    console.log(`i:${i}, k:${k}`);
+  }
+  console.log("ㅋㅋㅋ");
+}
