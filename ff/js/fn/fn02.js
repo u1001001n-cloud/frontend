@@ -22,4 +22,4 @@ voidAdd(10, 20); //void함수는 외롭게 있어야 한다.
 const returnVal = returnAdd(10, 20); //return함수는 리턴값을 보통 저장한다.
 
 console.log('voidVal:', voidVal);
-console.log('returnVal:', returnVal);
+console.log('returnVal:', abs);
