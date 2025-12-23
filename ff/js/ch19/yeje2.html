@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!-- HTML5 문서 선언 -->
+<html lang="en">
+<!-- 문서 시작 -->
+<head>
+  <meta charset="UTF-8">
+  <!-- 문자 인코딩 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 반응형 대응 -->
+  <title>pixel_editor_answer2.html</title>
+  <!-- 탭 제목 -->
+</head>
+<body>
+  <body style="text-align: center;"></body>
+  <h1>PIXEL EDITOR2</h1>
+  <!-- 제목 -->
+  <div id="editor"></div>
+  <!-- 에디터 전체 영역 -->
+  <script>
+    let isDrawing = false;
+    // 드래그 중인지 상태 저장
+    function makeElement(name, attributes){
+      // HTML 요소 생성 유틸 함수
+      const node = document.createElement(name);
+
+      if(attributes){
+        for(const key in attributes){
+          node.setAttribute(key, attributes[key]);
+        }
+      }
+      return node;
+    }
+
+  document.addEventListener('mousedown', ()=>{
+    isDrawing = true;
+  });
+
+  document.addEventListener('mouseup', ()=>{
+    isDrawing = false;
+  });
+
+    function createPixelEditor(target, nx, ny){
+      // 픽셀 에디터 생성 함수
+      const $colorInput = makeElement('input', { type: 'color' });
+      // 색상 선택기
+      target.append($colorInput);
+      const $clearBtn = makeElement('input', { type: 'button', value: 'Clear' });
+      // 전체 초기화 버튼
+      target.append($clearBtn);
+
+      const $table = makeElement('table');
+      // 픽셀용 테이블
+      target.append($table);
+      $table.style.borderCollapse = 'collapse';
+      $table.style.marginTop = '10px';
+      $table.style.margin = '10px auto';
+
+      for(let y=0; y<ny; y++){
+        // 행 생성
+        const $tr = makeElement('tr');
+        $table.append($tr);
+
+        for(let x=0; x<nx; x++){
+          // 칸 생성
+          const $td = makeElement('td');
+          $tr.append($td);
+
+    $td.addEventListener('mousedown', ()=>{
+      $td.style.backgroundColor = $colorInput.value;
+    });
+
+    $td.addEventListener('mouseover', ()=>{
+      if(isDrawing){
+        $td.style.backgroundColor = $colorInput.value;
+      }
+    });
+
+
+          $td.style.width = '15px';
+          $td.style.height = '15px';
+          $td.style.border = '1px solid gray';
+
+          $td.addEventListener('click', ()=>{
+            // 칸 클릭 시 색칠
+            $td.style.backgroundColor = $colorInput.value;
+          });
+        }
+      }
+
+      $clearBtn.addEventListener('click', ()=>{
+        // Clear 버튼 클릭 시 전체 초기화
+        const cells = $table.querySelectorAll('td');
+        cells.forEach(td => td.style.backgroundColor = '');
+      });
+    }
+
+    const $editor = document.querySelector('#editor');
+    // editor 영역 선택
+    createPixelEditor($editor, 20, 20);
+    // 20x20 픽셀 에디터 생성
+  </script>
+</body>
+</html>

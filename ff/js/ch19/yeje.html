@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!-- HTML5 문서 선언 -->
+<html lang="en">
+<!-- 문서 시작 -->
+<head>
+  <meta charset="UTF-8">
+  <!-- 문자 인코딩 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 반응형 대응 -->
+  <title>pixel_editor_answer.html</title>
+  <!-- 탭 제목 -->
+</head>
+<body>
+  <h1>PIXEL EDITOR</h1>
+  <!-- 제목 -->
+  <div id="editor"></div>
+  <!-- 에디터 전체 영역 -->
+  <script>
+    function makeElement(name, attributes){
+      // HTML 요소 생성 유틸 함수
+      const node = document.createElement(name);
+
+      if(attributes){
+        for(const key in attributes){
+          node.setAttribute(key, attributes[key]);
+        }
+      }
+      return node;
+    }
+
+    function createPixelEditor(target, nx, ny){
+      // 픽셀 에디터 생성 함수
+      const $colorInput = makeElement('input', { type: 'color' });
+      // 색상 선택기
+      target.append($colorInput);
+      const $clearBtn = makeElement('input', { type: 'button', value: 'Clear' });
+      // 전체 초기화 버튼
+      target.append($clearBtn);
+
+      const $table = makeElement('table');
+      // 픽셀용 테이블
+      target.append($table);
+      $table.style.borderCollapse = 'collapse';
+      $table.style.marginTop = '10px';
+
+      for(let y=0; y<ny; y++){
+        // 행 생성
+        const $tr = makeElement('tr');
+        $table.append($tr);
+
+        for(let x=0; x<nx; x++){
+          // 칸 생성
+          const $td = makeElement('td');
+          $tr.append($td);
+
+          $td.style.width = '15px';
+          $td.style.height = '15px';
+          $td.style.border = '1px solid gray';
+
+          $td.addEventListener('click', ()=>{
+            // 칸 클릭 시 색칠
+            $td.style.backgroundColor = $colorInput.value;
+          });
+        }
+      }
+
+      $clearBtn.addEventListener('click', ()=>{
+        // Clear 버튼 클릭 시 전체 초기화
+        const cells = $table.querySelectorAll('td');
+        cells.forEach(td => td.style.backgroundColor = '');
+      });
+    }
+
+    const $editor = document.querySelector('#editor');
+    // editor 영역 선택
+    createPixelEditor($editor, 20, 20);
+    // 20x20 픽셀 에디터 생성
+  </script>
+</body>
+</html>
+
+
+<!-- ㅇㅇ 봤지 👍
+지금 네가 배우는 흐름에 **딱 맞는 예제 1개** 줄게.
+(유틸 함수 + DOM 생성 + 반복문 + 이벤트까지 살짝)
+
+---
+
+## 🧪 예제 문제 (1문제)
+
+### 📌 문제 설명
+
+아래 조건을 만족하는 **미니 픽셀 보드**를 만들어라.
+
+---
+
+### ✅ 요구 사항
+
+1. `makeElement` 같은 **유틸 함수**를 사용해서 DOM 요소를 생성할 것
+2. `createPixelBoard(target, nx, ny)` 함수를 만들 것
+3. 함수 실행 시
+
+   * `nx × ny` 크기의 테이블이 생성되어야 함
+4. 각 칸(`td`)을 클릭하면
+
+   * **현재 선택된 색상으로 칠해질 것**
+5. 상단에
+
+   * 색상 선택 input (`type="color"`)
+   * Clear 버튼 (`type="button"`)  가 있어야 함
+6. Clear 버튼을 누르면
+
+   * 모든 칸 색상이 초기화될 것
+
+---
+
+### 💡 힌트 (안 보고 풀어도 됨)
+
+* 이벤트는 `click`
+* td 색칠은 `style.backgroundColor`
+* Clear는 `querySelectorAll('td')` 사용 가능
+* 유틸 함수는 **“잡일 분리”용**
+
+---
+
+### 🎯 목표
+
+```
+지금 배우는 개념을 전부 한 번에 써보는 문제
+```
+
+---
+
+### 📝 제출 방법
+
+* 네가 작성한 **전체 HTML 코드**
+* “여기서 막혔다 / 헷갈렸다” 질문
+* 또는 “이게 맞는지 봐달라”도 OK
+
+👉 보내면
+
+* **구조 피드백**
+* **더 깔끔하게 리팩토링**
+* **왜 이렇게 짜는지 설명**
+
+까지 같이 해줄게.
+-->
