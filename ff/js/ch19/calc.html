@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>calc.html</title>
+</head>
+<body>
+  <div>
+    n1: <input type="number" id="n1">
+    <br>
+    n2: <input type="number" id="n2">
+    <br>
+    <button id="btn_add">더하기</button>
+    <button id="btn_multiply">곱하기</button>
+    <div id="result"></div>
+  </div>
+  <script>
+    const $inputN1 = document.querySelector('#n1');
+    const $inputN2 = document.querySelector('#n2');
+    const $btnAdd = document.querySelector('#btn_add');
+    const $btnMultiply = document.querySelector('#btn_multiply');
+    const $result = document.querySelector('#result');
+    console.log($inputN1, $inputN2, $btnAdd);
+
+    //이벤트(~할 때)
+    //이벤트 바인딩(묶는다), 이벤트 + 함수 묶는다.
+    //특정 이벤트가 발생되면 함수가 실행되게 세팅한다.
+    //$btnAdd 버튼 객체에 click 이벤트 바인딩
+    //addEventListener 메소드에는 아규먼트 2개를 보내야 한다.
+    //첫번째 값: 이벤트 이름(문자열)
+    //두번째 값: 함수 주소값
+    $btnAdd.addEventListener('click', function() {
+      //alert('더하기 버튼 클릭');
+      const n1 = $inputN1.value; //value속성엔 문자열만 저장된다.
+      const n2 = $inputN2.value;
+
+      console.log('n1:', n1, ', n2:', n2);
+
+      const addValue = Number(n1) + Number(n2); //그냥 n1 + n2; 말고 강제 형변화 방법을 쓴 예시.
+      $result.innerText = addValue;
+    } );
+
+    $btnMultiply.addEventListener('click', function() { //$하고 이름에 언더바 없어야함.
+      //alert('더하기 버튼 클릭');
+      const n1 = $inputN1.value;
+      const n2 = $inputN2.value;
+
+      console.log('n1:', n1, ', n2:', n2);
+
+      const addValue = Number(n1) * Number(n2); // 곱하기이기 때문에 +를 *로 변경
+      $result.innerText = addValue;
+    } );
+    
+  </script>
+</body>
+</html>
