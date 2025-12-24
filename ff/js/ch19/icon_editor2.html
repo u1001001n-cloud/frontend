@@ -26,6 +26,17 @@
             const $inputColorClear = makeElement( 'input', { type: 'button', value: 'Clear' } );
             target.append($inputColorClear);
 
+            
+
+            $inputColorClear.addEventListener('click', () => {
+                const tdList = document.querySelectorAll('td');
+                for(const item of tdList){  //for of는 배열때 쓴다.
+                    //item은 td의 엘리먼트 주소값 담긴다.
+                    item.style.backgroundColor = '';
+                }
+            }
+        );
+
             const $table = makeElement('table');
             target.append($table);
             $table.style.borderCollapse = 'collapse';
@@ -39,6 +50,21 @@
                     $tr.append($td);
                     $td.style.width = $td.style.height = '15px';
                     $td.style.border = '1px solid gray';
+
+                    $td.addEventListener('click', () => {
+                        //클로저  closure
+                        $td.style.backgroundColor = $inputColor.value;
+                    });
+
+                    /*
+                    $td.addEventListener('click', e => {
+                        //소괄호로 안 비우고 e를 넣으면 결과는 똑같다. 클로저 없어도 됨.
+                        e.target.style.backgroundColor = $inputColor.value;
+                    });
+
+                    한줄로도 가능(많이 길어짐)
+                    $td.addEventListener('click', e => e.target.style.backgroundColor = $inputColor.value;);
+                    */
                 }
             }
         }

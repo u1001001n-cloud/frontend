@@ -11,7 +11,7 @@ function sum(n1, n2) {
 
 const con1 = sum; //상수 con1에 sum에 저장된 함수 주소값을 복사해서 대입함.
 console.log(typeof con1);
-con1(20, 30);
+con1(20, 30); //함수의 주소값만 알면 언제나 함수 호출 가능
 
 console.log('1:', sum);
 sum(10, 20);
