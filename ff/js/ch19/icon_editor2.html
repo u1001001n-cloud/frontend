@@ -59,9 +59,12 @@
                     /*
                     $td.addEventListener('click', e => {
                         //소괄호로 안 비우고 e를 넣으면 결과는 똑같다. 클로저 없어도 됨.
-                        e.target.style.backgroundColor = $inputColor.value;
+                        //e.target은 td의 엘리먼트의 주소값 담겨져 있음
+                        e.target.style.backgroundColor = bColor ? '' : $inputColor.value;
                     });
-
+                    */
+                    
+                    /*
                     한줄로도 가능(많이 길어짐)
                     $td.addEventListener('click', e => e.target.style.backgroundColor = $inputColor.value;);
                     */
