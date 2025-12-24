@@ -14,7 +14,7 @@ proc(arr[i], i);
 */
 
 console.log('-----------------');
-//이름을 주지 않는 일회용 함수
+//이름을 주지 않는 일회용 함수(임시함수)
 arr.forEach((item, idx) => {
   console.log(`arr[${idx}]: ${item}`);
 });
