@@ -1,4 +1,4 @@
-/* cb03.js 배열의 filter : 배열에서 필요한 아이템들만 쏙 뽑아서 새로운 배열을 만들때 사용 */
+/* cb03.js 배열의 [ filter ] : 배열에서 필요한 아이템들만 쏙 뽑아서 [새로운 배열을 만들때 사용] */
 const arr = [ 3, 88, 76, 9, 34, 65 ];
 
 //const oddArr = arr.filter(item => item % 2);
