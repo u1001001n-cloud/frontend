@@ -15,12 +15,14 @@ const increaseAndPrint = (n, cb) => { //iAP  || n에 1이 들어감(2)
   }, 1000 );
 }
 
+/*
 increaseAndPrint(0, n1 => { //iAP 호출 || n에 1이 들어감(1)
   increaseAndPrint(n1, n2 => {
     increaseAndPrint(n2);
   }); //주소값
 });
 //1, 2만 출력하게 됨(n이 하나일때는. n1, n2가 생기면 3까지 출력됨)
+*/
 
 console.log('-------------------');
 
@@ -34,5 +36,13 @@ const increaseAndPrintPromise = (n) => {
   } );
 }
 
-increaseAndPrintPromise(10)  //promise의 객체 주소값 리턴
-.then(item => increaseAndPrintPromise(item));
+increaseAndPrintPromise(10)  //promise의 객체 주소값 리턴(아래 item도 다 똑같음)
+.then(item => increaseAndPrintPromise(item))
+.then(item => increaseAndPrintPromise(item))
+.then(item => increaseAndPrintPromise(item))
+.then(item => increaseAndPrintPromise(item))
+.then(item => increaseAndPrintPromise(item))
+.then(item => increaseAndPrintPromise(item))
+.then(item => increaseAndPrintPromise(item))
+.then(item => increaseAndPrintPromise(item))
+.then(item => console.log('끝', item)); // 여기의 item에는 마지막으로 출력되는 값이 들어온다.
