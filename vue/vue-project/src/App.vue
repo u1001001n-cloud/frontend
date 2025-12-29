@@ -1,17 +1,23 @@
-<!-- 로직 담당 -->
 <script setup>
-  import FrontWheel from '@/components/FrontWheel.vue';
-  import RearWheel from '@/components/Rear Wheel.vue';
+import router from './router';
+
+
 </script>
 
-<!-- 화면 (View) 담당 -->
 <template>
-  <front-wheel></front-wheel>
-  <rear-wheel />
+  <div> <!-- 템플릿 입장에선 자식이 하나만 있어야 함(특히 리엑트가 여전히 이럼) -->
+    <nav>
+      <router-link to="/component">컴포넌트</router-link>
+      <router-link to="/page98">Page98</router-link>
+      <router-link to="/page103">Page103</router-link>
+      <router-link to="/mission01">Mission01</router-link>
+    </nav>
+    <main>
+      <router-view />
+    </main>
+  </div>
 </template>
 
-<!--
-컴포넌트(Component): 재사용 가능한 요소
+<style scoped>
 
-쉽게 생각해 자동차 부품이라고 봐도 된다.
--->
+</style>
