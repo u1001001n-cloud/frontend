@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>async easy</title>
+</head>
+<body>
+
+  <button id="btn">클릭</button>
+  <p id="text">대기중</p>
+
+  <script>
+    // 버튼이랑 글자 있는 요소를 가져온다
+    const $btn = document.querySelector('#btn');
+    const $text = document.querySelector('#text');
+
+    // 버튼을 클릭했을 때 실행될 함수
+    $btn.addEventListener('click', () => {
+
+      // 클릭하자마자 글자를 바꾼다 (안 기다림)
+      $text.innerText = '로딩중...';
+
+      // 1초 뒤에 실행될 일을 예약한다
+      setTimeout(() => {
+
+        // 1초가 지나면 글자를 바꾼다
+        $text.innerText = '완료!';
+
+      }, 1000);
+    });
+  </script>
+
+</body>
+</html>
