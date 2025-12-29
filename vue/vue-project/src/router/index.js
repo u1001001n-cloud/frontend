@@ -16,6 +16,14 @@ const router = createRouter({
       component: () => import('@/views/Page103.vue')
     },
     {
+      path: '/page108',
+      component: () => import('@/views/page108.vue')
+    },
+    {
+      path: '/page110',
+      component: () => import('@/views/Page110.vue')
+    },
+    {
       path: '/mission01',
       component: () => import('@/views/mission/mission01.vue')
     },
