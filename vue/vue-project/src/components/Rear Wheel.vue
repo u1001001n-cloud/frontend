@@ -11,6 +11,7 @@
     <tire color="yellow" />
     <div>TIMES: {{ counterStore.count }}</div>
     <button @click="counterStore.increment">회전</button>
+    <button @click="counterStore.outcrement">역회전</button>
   </div>
 </template>
 
