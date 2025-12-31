@@ -8,9 +8,13 @@ const refSitUp = ref(0);
 //반응형 상태란 자신의 값이 변하면 화면을 다시 그리는 변수 or 속성이다.
 
 //반응형 상태를 만드는 방법 2가지 ref, reactive 를 이용해서 만들 수 있다.
+// ref : 1~2개(한땀한땀 생성할 때)
+// reactive : (한번에)여러개     --------정해진 방법은 따로 없다. 더 나은 방식.
 
 const increasePushUp = () => {
   console.log(`pushUp: ${++pushUp}, refPushUp: ${++refPushUp.value}`);
+  // re 반응형 상태 객체의 값을 변경할 때는 value속성값을 변경하면 된다.
+  // (++이 붙으면 .value=숫자열이라고 생각하면 됨.) (형변환은 하면 안 좋음. 성능 안 좋음)
 };
 const increaseSitUp = () => {
   console.log(`sitUp: ${++sitUp}, refSitUp: ${++refSitUp.value}`);

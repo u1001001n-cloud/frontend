@@ -1,7 +1,7 @@
 <script setup>
 let loading = false;
 
-const parent = [']fruits', 'abc'];
+const parent = ['fruits', 'abc'];
 const child = 'item';
 /*
 class 바인딩과 배열의 조합은 배열의 아이템이 클래스에 무조건 추가가 되지만
@@ -16,6 +16,9 @@ const rect = {
   backgroundColor: 'red',
   width: '200px',
   height: '100px'
+  // 카멜 네이밍(css에선 케밥)
+  // vue에선 파스칼. 클래스명은 케밥. & 파스칼로 적은것도 케밥으로 연결해도 연결된다는 약속이 되어있음.
+  // vue에선 class를 쓸 수 있고 리엑트에선 class가 예약어로 있기 때문에 className이라고 씀.
 }
 </script>
 

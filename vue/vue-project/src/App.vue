@@ -1,5 +1,5 @@
 <script setup>
-const routerList = ['component', 'page98', 'page103', 'page108', 'page110', 'mission01'];
+import { globalState } from '@/globalState';
 
 
 </script>
@@ -7,7 +7,7 @@ const routerList = ['component', 'page98', 'page103', 'page108', 'page110', 'mis
 <template>
   <div> <!-- 템플릿 입장에선 자식이 하나만 있어야 함(특히 리엑트가 여전히 이럼) -->
     <nav>
-      <router-link v-for="item in routerList" :to="`/${item}`" :key="item">{{ item }}</router-link>
+      <router-link v-for="item in globalState" :to="`/${item}`" :key="item">{{ item }}</router-link>
       <!--
       <router-link to="/component">컴포넌트</router-link>
       <router-link to="/page98">Page98</router-link>
